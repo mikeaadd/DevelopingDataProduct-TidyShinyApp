@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tidyr App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Tidyr App">
+  <meta name="author" content="Michael Addonisio">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Tidyr App</h1>
+    <h2>Developing Data Products Project</h2>
+    <p>Michael Addonisio<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Tidy Shiny: Course Project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Tidy Shiny app is a data wrangiling tool that allows the user to easily tranform data from &quot;wide-to-long&quot; and from &quot;long-to-wide&quot;. It accomplishes this task primarily by using the the package &#39;tidyr&#39; and its useful functions gather and spread. This app has four principal elements. </p>
+
+<ol>
+<li>Uploading - the app begins with a preloaded dataset for demo purposes</li>
+<li>Gathering - allows user to transform data from &quot;wide-to-long&quot;</li>
+<li>Spreading - allows user to tranform data from &quot;long-to-wide&quot;</li>
+<li>Downloading - allows user to download transformed dataset in .csv format</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Gathering</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To use the Gathering function, you choose the scale variables you would like to gather. Below you can see the first 5 rows of the transformation on the example dataset by choosing X, Y, and Z.</p>
+
+<pre><code>##         time         X          Y            Z
+## 1 2009-01-01 0.5347014  2.8315960 -10.50664878
+## 2 2009-01-02 0.1509189  0.9251856  -0.01670842
+## 3 2009-01-03 0.6873994  1.5353982  -5.75031889
+## 4 2009-01-04 0.5534994 -0.7711718  -1.05758055
+</code></pre>
+
+<pre><code>##         time key     value
+## 1 2009-01-01   X 0.5347014
+## 2 2009-01-02   X 0.1509189
+## 3 2009-01-03   X 0.6873994
+## 4 2009-01-04   X 0.5534994
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Spreading</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To use the Spreading function, you choose the scale variables you select the key and value variables that you would like to spread on. Below you can see the first 5 rows of the transformation on the created dataset from the last slide by choosing key and value variables. </p>
+
+<pre><code>##         time key      value
+## 1 2009-01-01   X  1.2697285
+## 2 2009-01-02   X  0.2484924
+## 3 2009-01-03   X -0.5003911
+## 4 2009-01-04   X  0.4599079
+</code></pre>
+
+<pre><code>##         time          X          Y          Z
+## 1 2009-01-01  1.2697285 -1.3931461 -0.7252226
+## 2 2009-01-02  0.2484924 -0.7521495 -5.4241407
+## 3 2009-01-03 -0.5003911 -2.8913119  2.9247927
+## 4 2009-01-04  0.4599079 -2.0991269  1.7447743
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Final Step</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Once you transform the data into your liking you can save the data using the download button</li>
+<li>Vuola! Your tidy dataset is ready to be analysed!!!</li>
+<li>Thank you, I hope you enjoy it!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Tidy Shiny: Course Project'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Gathering'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Spreading'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Final Step'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

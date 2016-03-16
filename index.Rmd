@@ -1,0 +1,71 @@
+---
+title       : Tidyr App
+subtitle    : Developing Data Products Project
+author      : Michael Addonisio
+job         : 
+framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Tidy Shiny: Course Project
+The Tidy Shiny app is a data wrangiling tool that allows the user to easily tranform data from "wide-to-long" and from "long-to-wide". It accomplishes this task primarily by using the the package 'tidyr' and its useful functions gather and spread. This app has four principal elements. 
+
+
+
+1. Uploading - the app begins with a preloaded dataset for demo purposes
+2. Gathering - allows user to transform data from "wide-to-long"
+3. Spreading - allows user to tranform data from "long-to-wide"
+4. Downloading - allows user to download transformed dataset in .csv format
+
+--- .class #id 
+
+## Gathering
+
+To use the Gathering function, you choose the scale variables you would like to gather. Below you can see the first 5 rows of the transformation on the example dataset by choosing X, Y, and Z.
+
+```{r, echo = FALSE, results = "hide", warning = FALSE}
+library(tidyr)
+stocks <- data.frame(
+  time = as.Date('2009-01-01') + 0:9,
+  X = rnorm(10, 0, 1),
+  Y = rnorm(10, 0, 2),
+  Z = rnorm(10, 0, 4)
+)
+```
+```{r, echo = FALSE}
+head(stocks,4)
+head(gather(stocks, key, value, c(X,Y,Z)),4)
+```
+
+--- .class #id 
+
+## Spreading
+
+To use the Spreading function, you choose the scale variables you select the key and value variables that you would like to spread on. Below you can see the first 5 rows of the transformation on the created dataset from the last slide by choosing key and value variables. 
+
+```{r, echo = FALSE, results = "hide", warning = FALSE}
+library(tidyr)
+stocks <- data.frame(
+  time = as.Date('2009-01-01') + 0:9,
+  X = rnorm(10, 0, 1),
+  Y = rnorm(10, 0, 2),
+  Z = rnorm(10, 0, 4)
+)
+stocksm = gather(stocks,key, value, c(X,Y,Z))
+```
+```{r, echo = FALSE}
+head(stocksm,4)
+head(spread(stocksm, key, value),4)
+```
+
+--- .class #id 
+
+## Final Step
+
+- Once you transform the data into your liking you can save the data using the download button
+- Vuola! Your tidy dataset is ready to be analysed!!!
+- Thank you, I hope you enjoy it!
